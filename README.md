@@ -15,10 +15,10 @@ Here's some screenshot of the output
 
 
 
-Student Data
+## Student Data
 
 ![Screenshot 2022-10-23 221902](https://user-images.githubusercontent.com/47697392/197405039-5943d8f4-5ebd-4105-9752-2bf6e01d960f.png)
 
-Student result 
+## Student result 
 
 ![Screenshot 2022-10-23 222003](https://user-images.githubusercontent.com/47697392/197405041-97a20448-398e-4689-94d5-4137ce533f77.png)
