@@ -16,13 +16,13 @@ class UserAdmin(admin.ModelAdmin):
 # # create superclass CategoryAdmin
 class StudentAdmin(admin.ModelAdmin):
   fieldsets = [
-    ('Student Information',{'fields':['user','registration_number','class_name','father_name','mother_name','address','phone','email']}),
+    ('Student Information',{'fields':['user','registration_number','class_name','father_name','mother_name','address','phone']}),
   ]
   inlines = [SubMarksInline]
   autocomplete_fields = ['user']
   list_display = ('user_name','registration_number','class_name','phone')
   list_filter = ['class_name']
-  search_fields = ['registration_number','class_name','father_name','mother_name','address','phone','email']
+  search_fields = ['registration_number','class_name','father_name','mother_name','address','phone']
 
   
   def user_name(self,obj):

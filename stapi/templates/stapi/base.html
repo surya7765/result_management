@@ -33,7 +33,6 @@
                     src="{{user.profile.image.url }}"
                     style="width: 60px"
                   /></a></li>
-              <li><a class="nav-item nav-link" href="{% url 'profile' %}">{{user.username.capitalize}}</a></li>
               <li><a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a></li>
             {% else %}
               <li><a class="nav-item nav-link" href="{% url 'login' %}">Login</a></li>
@@ -53,13 +52,14 @@
       {% endif %}
     </ul>
 
-
-    <div class="container">
-      <div class="row">
-        {% block content %}
-        {% endblock content %}
+    
+      <div class="container">
+        <div class="row">
+          {% block content %}
+          {% endblock content %}
+        </div>
       </div>
-    </div>
+   
 
   </body>
 

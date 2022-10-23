@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from stapi.models import Student, Subject, SubMarks
-from stapi.serializers import StudentSerializer, SubjectSerializer, SubMarksSerializer
+from stapi.serializers import StudentSerializer, StudentDataSerializer, SubjectSerializer, SubMarksSerializer
 from rest_framework.response import Response
 
 # Create your views here.
@@ -12,7 +12,7 @@ def Home(request):
 
 # make view which returns data of current logged in user
 class StudentViewSet(viewsets.ModelViewSet):
-  serializer_class = StudentSerializer
+  serializer_class = StudentDataSerializer
   http_method_names = ['get']
 
   def get_queryset(self):

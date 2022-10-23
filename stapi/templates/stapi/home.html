@@ -1,55 +1,96 @@
-{% extends "stapi/base.html" %}
+{% extends "stapi/base.html" %} {% block content %} 
 
-{% block content %}
+{% if user.is_authenticated%}
 
-  <div style="margin-top: 20px;">
-    <div class="col m3 center-align card-panel grey lighten-5 z-depth-1" >
-      <img
-        class="circle account-img"
-        src="{{user.profile.image.url }}"
-        style="width: 150px; margin-top: 20px;"
-      />
-      <div class="row">
-        <div class="col m12">
-          <h5 class="" id="fullname"></h5>
-          <span class="username"></span><br/>
-          <small id="email"></small>
-        </div>
+<div style="margin-top: 20px">
+  <div class="col m3 center-align card-panel grey lighten-5 z-depth-1">
+    <img
+      class="circle account-img"
+      src="{{user.profile.image.url }}"
+      style="width: 150px; margin-top: 20px"
+    />
+    <div class="row">
+      <div class="col m12">
+        <h5 class="" id="fullname"></h5>
+        <span class="username"></span><br />
+        <small id="email"></small>
       </div>
     </div>
-
-    <div class="col m8" style="margin-left: 20px;">
-      <div class="row">
-        <div class="valign-wrapper card-panel z-depth-1" style="padding: 0px;">
-          <h4>Details of <span class="username"></span></h4>
-        </div>
-        <div class="card-panel z-depth-1">
-          <div class="">
-            <p>
-              <span class="grey-text">Class Name</span><br/>
-              <span id="classname"></span>
-            </p>
-            <p>
-              <span class="grey-text">Father Name</span><br/>
-              <span id="fathername"></span>
-            </p>
-            <p>
-              <span class="grey-text">Mother Name</span><br/>
-              <span id="mothername"></span>
-            </p>
-            <p>
-              <span class="grey-text">Phone Number</span><br/>
-              <span id="phone"></span>
-            </p>
-            <p>
-              <span class="grey-text">Address</span><br/>
-              <span id="address"></span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
+
+  <div class="row">
+    <div class="col m8" style="margin-left: 20px">
+      <div class="valign-wrapper card-panel z-depth-1" style="padding: 0px">
+        <h4>Details of <span class="username"></span></h4>
+      </div>
+      <div class="card">
+        <div class="col m4">
+          <p>
+            <span class="grey-text">Class Name</span><br />
+            <span id="classname"></span>
+          </p>
+          <p>
+            <span class="grey-text">Father Name</span><br />
+            <span id="fathername"></span>
+          </p>
+          <p>
+            <span class="grey-text">Mother Name</span><br />
+            <span id="mothername"></span>
+          </p>
+        </div>
+        <div class="col m4">
+          <p>
+            <span class="grey-text">Registration Number</span><br />
+            <span id="regno"></span>
+          </p>
+          <p>
+            <span class="grey-text">Phone Number</span><br />
+            <span id="phone"></span>
+          </p>
+          <p>
+            <span class="grey-text">Address</span><br />
+            <span id="address"></span>
+          </p>
+        </div>
+      </div>
+      <table id="studentmarks"></table>
+      {% comment %} total and average marks inside table {% endcomment %}
+      <div class="card">
+        <div class="col m4">
+          <p>
+            <span class="grey-text">Overall Percentage</span><br />
+            <span id="percentage"></span>
+          </p>
+        </div>
+        <div class="col m4">
+          <p>
+            <span class="grey-text">Total Obtained</span><br />
+            <span id="avg_marks"></span>
+          </p>
+        </div>
+        <div class="col m4">
+          <p>
+            <span class="grey-text">Total Marks</span><br />
+            <span id="total_marks"></span>
+          </p>
+        </div>
+      </div>
+      <div>
+        <h6 class="red-text topper"></h6>
+      </div>
+      <div>
+        <h4 class="blue-grey-text">Highest marks in every subject</h4>
+        <table id="highestmarks"></table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% else %}
+  <h2 class="red-text">
+    To see the dashboard,
+    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a> Please!
+  </h2>
+{% endif %} 
 
 {% endblock content %}

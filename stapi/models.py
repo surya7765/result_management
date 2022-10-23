@@ -22,7 +22,6 @@ class Student(models.Model):
   mother_name = models.CharField(max_length=30)
   address = models.TextField()
   phone = models.IntegerField()
-  email = models.EmailField(max_length=50)
   marks = models.ManyToManyField('Subject', through='SubMarks')
 
   def __str__(self):
