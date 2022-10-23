@@ -1,7 +1,6 @@
 body {
-  background: #fafafa;
+  background: #ffffff;
   color: #333333;
-  padding-top: 60px;
 }
 
 h1,
@@ -17,21 +16,6 @@ ul {
   margin: 0;
 }
 
-.bg-steel {
-  background-color: #010102;
-}
-
-.site-header .navbar-nav .nav-link {
-  color: #cbd5db;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-  color: #948989;
-}
-
-.site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
-}
 .content-section {
   background: #ffffff;
   padding: 10px 20px;

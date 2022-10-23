@@ -1,1 +1,55 @@
 {% extends "stapi/base.html" %}
+
+{% block content %}
+
+  <div style="margin-top: 20px;">
+    <div class="col m3 center-align card-panel grey lighten-5 z-depth-1" >
+      <img
+        class="circle account-img"
+        src="{{user.profile.image.url }}"
+        style="width: 150px; margin-top: 20px;"
+      />
+      <div class="row">
+        <div class="col m12">
+          <h5 class="" id="fullname"></h5>
+          <span class="username"></span><br/>
+          <small id="email"></small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col m8" style="margin-left: 20px;">
+      <div class="row">
+        <div class="valign-wrapper card-panel z-depth-1" style="padding: 0px;">
+          <h4>Details of <span class="username"></span></h4>
+        </div>
+        <div class="card-panel z-depth-1">
+          <div class="">
+            <p>
+              <span class="grey-text">Class Name</span><br/>
+              <span id="classname"></span>
+            </p>
+            <p>
+              <span class="grey-text">Father Name</span><br/>
+              <span id="fathername"></span>
+            </p>
+            <p>
+              <span class="grey-text">Mother Name</span><br/>
+              <span id="mothername"></span>
+            </p>
+            <p>
+              <span class="grey-text">Phone Number</span><br/>
+              <span id="phone"></span>
+            </p>
+            <p>
+              <span class="grey-text">Address</span><br/>
+              <span id="address"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}

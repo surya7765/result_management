@@ -21,4 +21,16 @@ class StudentViewSet(viewsets.ModelViewSet):
     if self.request.user.is_superuser:
       return Student.objects.all()
     else:
+      # print a particular field form Student.object()
+      # print(Student.objects.values_list(
+      #     'submarks__subject__subject_name').filter(user=self.request.user))
       return Student.objects.all().filter(user=self.request.user)
+
+
+class SubMarksViewSet(viewsets.ModelViewSet):
+  serializer_class = SubMarksSerializer
+  http_method_names = ['get']
+
+  def get_queryset(self):
+    # return current user details
+    return SubMarks.objects.all()

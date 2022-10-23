@@ -49,6 +49,6 @@ class SubMarks(models.Model):
       MaxValueValidator(100),
       MinValueValidator(1)
   ])
-
+  
   def __str__(self):
     return self.subject.subject_name

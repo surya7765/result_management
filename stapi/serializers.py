@@ -32,6 +32,6 @@ class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = ['user', 'registration_number',
-                  'class_name', 'father_name', 'mother_name', 'address', 'phone', 'email', 'subjects', 'submarks']
+                  'class_name', 'father_name', 'mother_name', 'address', 'phone', 'email', 'subjects', 'submarks',]
         depth = 1
 
